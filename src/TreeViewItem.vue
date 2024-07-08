@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { isInteger, concat } from 'lodash';
+import { isInteger, concat } from 'lodash-es';
 import TreeViewItemValue from './TreeViewItemValue.vue';
 
 export default {

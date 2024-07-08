@@ -15,7 +15,7 @@
 
 
 <script>
-import { isBoolean, isFunction, isString, isNaN, isNull, isNumber, toNumber } from 'lodash';
+import { isBoolean, isFunction, isString, isNaN, isNull, isNumber, toNumber } from 'lodash-es';
 
 export default {
 	name: 'tree-view-item',

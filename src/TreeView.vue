@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { map, isPlainObject, isArray, cloneDeep, last, dropRight, drop } from 'lodash';
+import { map, isPlainObject, isArray, cloneDeep, last, dropRight, drop } from 'lodash-es';
 import TreeViewItem from './TreeViewItem.vue';
 
 export default {

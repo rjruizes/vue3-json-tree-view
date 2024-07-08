@@ -1,6 +1,6 @@
 {
 	"name": "vue3-json-tree-view",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"repository": "rjruizes/vue3-json-tree-view",
 	"homepage": "https://github.com/rjruizes/vue3-json-tree-view",
 	"bugs": {
@@ -33,12 +33,12 @@
 		}
 	],
 	"license": "MIT",
-	"dependencies": {
-		"lodash": "^4.17.21"
-	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^5.0.5",
 		"vite": "^5.3.3",
 		"vue": "^3.4.31"
+	},
+	"dependencies": {
+		"lodash-es": "^4.17.21"
 	}
 }
