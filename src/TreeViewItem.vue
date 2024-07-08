@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import _ from 'lodash';
+import { isInteger, concat } from 'lodash';
 import TreeViewItemValue from './TreeViewItemValue.vue';
 
 export default {
@@ -83,7 +83,7 @@ export default {
 			return value.type === 'value';
 		},
 		getKey(value) {
-			if (_.isInteger(value.key)) {
+			if (isInteger(value.key)) {
 				return `${value.key}:`;
 			}
 			return `"${value.key}":`;
@@ -93,7 +93,7 @@ export default {
 			return value.isRoot;
 		},
 		onChangeData(path, value) {
-			const newPath = _.concat(this.data.key, path);
+			const newPath = concat(this.data.key, path);
 			this.$emit('change-data', newPath, value);
 		}
 	}

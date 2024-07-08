@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import _ from 'lodash';
+import { map, isPlainObject, isArray, cloneDeep, last, dropRight, drop } from 'lodash';
 import TreeViewItem from './TreeViewItem.vue';
 
 export default {
@@ -34,11 +34,11 @@ export default {
 			};
 		},
 
-		// Since we use lodash, the _.map method will work on
+		// Since we use lodash, the map method will work on
 		// both Objects and Arrays, returning either the Key as
 		// a string or the Index as an integer
 		generateChildrenFromCollection(collection) {
-			return _.map(collection, (value, keyOrIndex) => {
+			return map(collection, (value, keyOrIndex) => {
 				if (this.isObject(value)) {
 					return this.transformObject(value, keyOrIndex);
 				}
@@ -72,11 +72,11 @@ export default {
 
 		// Helper Methods for value type detection
 		isObject(value) {
-			return _.isPlainObject(value);
+			return isPlainObject(value);
 		},
 
 		isArray(value) {
-			return _.isArray(value);
+			return isArray(value);
 		},
 
 		isValue(value) {
@@ -84,12 +84,12 @@ export default {
 		},
 
 		onChangeData(path, value) {
-			const lastKey = _.last(path);
-			const newPath = _.dropRight(_.drop(path));
+			const lastKey = last(path);
+			const newPath = dropRight(drop(path));
 
-			const data = _.cloneDeep(this.data);
+			const data = cloneDeep(this.data);
 			let targetObject = data;
-			_.forEach(newPath, key => {
+			map(newPath, key => {
 				targetObject = targetObject[key];
 			});
 
@@ -101,7 +101,7 @@ export default {
 	},
 	computed: {
 		allOptions() {
-			return _.extend({}, {
+			return Object.assign({}, {
 				rootObjectKey: 'root',
 				maxDepth: 4,
 				limitRenderDepth: false,

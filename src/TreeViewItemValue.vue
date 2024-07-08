@@ -15,7 +15,7 @@
 
 
 <script>
-import _ from 'lodash';
+import { isBoolean, isFunction, isString, isNaN, isNull, isNumber, toNumber } from 'lodash';
 
 export default {
 	name: 'tree-view-item',
@@ -33,7 +33,7 @@ export default {
 	},
 	watch: {
 		valueFormed(val) {
-			this['valueString'] = _.isString(val) ? val.replace(/^["]+|["]+$/g, '') : val;
+			this['valueString'] = isString(val) ? val.replace(/^["]+|["]+$/g, '') : val;
 		}
 	},
 	methods: {
@@ -55,10 +55,10 @@ export default {
 
 			switch (dataType) {
 				case 'number':
-					if (_.isNaN(_.toNumber(v))) {
+					if (isNaN(toNumber(v))) {
 						throw new Error('only number');
 					}
-					return _.toNumber(v);
+					return toNumber(v);
 				case 'boolean':
 					if (v.toLowerCase() === 'true') {
 						return true;
@@ -73,13 +73,13 @@ export default {
 			}
 		},
 		getValue(value) {
-			if (_.isNumber(value)) {
+			if (isNumber(value)) {
 				return value;
 			}
-			if (_.isNull(value)) {
+			if (isNull(value)) {
 				return 'null';
 			}
-			if (_.isString(value)) {
+			if (isString(value)) {
 				if (this.link && !this.modifiable) {
 					return `"${this.linkify(value)}"`;
 				}
@@ -100,19 +100,19 @@ export default {
 			return replacedText;
 		},
 		getValueType(value, prefix = 'tree-view-item-value-') {
-			if (_.isNumber(value)) {
+			if (isNumber(value)) {
 				return `${prefix}number`;
 			}
-			if (_.isFunction(value)) {
+			if (isFunction(value)) {
 				return `${prefix}function`;
 			}
-			if (_.isBoolean(value)) {
+			if (isBoolean(value)) {
 				return `${prefix}boolean`;
 			}
-			if (_.isNull(value)) {
+			if (isNull(value)) {
 				return `${prefix}null`;
 			}
-			if (_.isString(value)) {
+			if (isString(value)) {
 				return `${prefix}string`;
 			}
 			return `${prefix}unknown`;
