@@ -8,7 +8,7 @@
 			:modifiable="allOptions.modifiable"
 			:link="allOptions.link"
 			:limit-render-depth="allOptions.limitRenderDepth"
-			@change-data="onChangeData"/>
+			@change-data="onChangeData" />
 	</div>
 </template>
 

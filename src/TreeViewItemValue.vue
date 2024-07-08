@@ -1,4 +1,4 @@
--<template>
+<template>
 	<div>
 		<span class="tree-view-item-key">{{keyString}}</span>
 		<input
@@ -33,7 +33,7 @@ export default {
 	},
 	watch: {
 		valueFormed(val) {
-			this.$set(this, 'valueString', _.isString(val) ? val.replace(/^["]+|["]+$/g, '') : val);
+			this['valueString'] = _.isString(val) ? val.replace(/^["]+|["]+$/g, '') : val;
 		}
 	},
 	methods: {
