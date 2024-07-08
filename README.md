@@ -1,10 +1,6 @@
 # Vue JSON Tree View
 
-![a demonstration](https://raw.githubusercontent.com/arvidkahl/vue-json-tree-view/master/header.png)
-
-## Demo and Blogpost
-
-You can check out the [demo](https://jsfiddle.net/arvidkahl/kwo6vk9d/11/) on JSFiddle and read the Blogpost called [Building a JSON Tree View Component in Vue.js from Scratch in Six Steps](http://brianyang.com/building-a-json-tree-view-component-in-vue-js-from-scratch-in-six-steps) that lead to the creation of this library.
+![a demonstration](https://raw.githubusercontent.com/rjruizes/vue-json-tree-view/main/header.png)
 
 ##  Installation
 
@@ -14,12 +10,10 @@ npm install --save vue-json-tree-view
 ```
 
 Then, in your Application JavaScript, add:
-```javascript
+```js
 import TreeView from "vue-json-tree-view"
 Vue.use(TreeView)
 ```
-
-Done.
 
 ## Usage
 
@@ -39,7 +33,7 @@ The JSON to be displayed. Expects a valid JSON object.
 #### `options`
 
 The defaults are:
-```
+```js
 {
   maxDepth: 4,
   rootObjectKey: "root",
@@ -80,13 +74,14 @@ If `modifiable` is true and you want to take the updated json data, you must reg
 All leaves will have their type indicated as a CSS class, like `tree-view-item-value-string`. Supported types: String, Number, Function, Boolean and Null Values.
 
 Keys can also be styled. For instance to make labels red:
-```
+```css
 .tree-view-item-key {
     color: red;
 }
 ```
 
 ## Contributing
+
 Contributions to this repo are very welcome as they are what has helped it become what it is today. Simply raise an issue with new ideas or submit a pull request.
 
 A github action automatically deploys changes when they are merged into the master branch.
