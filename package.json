@@ -1,6 +1,6 @@
 {
 	"name": "vue3-json-tree-view",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"repository": "rjruizes/vue3-json-tree-view",
 	"homepage": "https://github.com/rjruizes/vue3-json-tree-view",
 	"bugs": {
@@ -8,7 +8,6 @@
 		"email": "rjruizes@proton.me"
 	},
 	"description": "a JSON Tree View Component in Vue.js",
-	"main": "./dist/vue3-json-tree-view.min.js",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
